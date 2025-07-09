@@ -384,12 +384,23 @@ export function composeCanvases() {
   }
 }
 
+function generateSecureRandomName() {
+  const chars = "0123456789abcdefghijklmnopqrstuvwxyz";
+  const randomValues = new Uint32Array(32);
+  crypto.getRandomValues(randomValues); // 浏览器或Node.js环境均可用
+  let result = "";
+  randomValues.forEach((value) => {
+    result += chars[value % chars.length];
+  });
+  return result;
+}
+
 export function saveWebp() {
   if (canvas) {
     canvas.toBlob((blob) => {
       const link = document.createElement("a");
       link.href = URL.createObjectURL(blob);
-      link.download = "Canvas-Ruom.webp";
+      link.download = `${generateSecureRandomName()}.webp`;
       link.click();
       URL.revokeObjectURL(link.href);
     }, "image/webp");
