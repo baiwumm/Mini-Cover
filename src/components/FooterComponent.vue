@@ -19,7 +19,7 @@
           <Icon icon="carbon:home" class="w-5 h-5" />
         </a>
         <a
-          href="mailto:baiwumm@foxmail.com"
+          href="mailto:me@baiwumm.com"
           class="inline-flex items-center justify-center p-1.5 rounded-full transition-colors duration-200 text-gray-400 hover:text-gray-600 hover:bg-gray-200 dark:text-gray-500 dark:hover:text-gray-400 dark:hover:bg-gray-700 box-content"
         >
           <Icon icon="carbon:email" class="w-5 h-5" />
