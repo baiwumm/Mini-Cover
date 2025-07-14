@@ -1,65 +1,69 @@
 <template>
-  <footer class="sm:mt-12 mb-2 text-center text-xs sm:text-sm">
-    <div class="flex flex-wrap justify-center gap-x-2 gap-y-1">
-      <span>富强</span>
-      <span>民主</span>
-      <span>文明</span>
-      <span>和谐</span>
-      <span>自由</span>
-      <span>平等</span>
-      <span>公正</span>
-      <span>法治</span>
-      <span>爱国</span>
-      <span>敬业</span>
-      <span>诚信</span>
-      <span>友善</span>
-    </div>
-    <div class="mt-2 space-x-2">
-      <span>© 2024</span>
-      <a href="https://bsgun.cn" 
-         target="_blank"
-         class="font-bold text-green-600 hover:text-gray-600 transition-colors">梦爱吃鱼</a>
-      <a v-if="icpNumber" 
-         href="https://beian.miit.gov.cn/" 
-         target="_blank"
-         class="font-bold text-green-600 hover:text-gray-600 transition-colors">{{ icpNumber }}</a>
-      <button class="text-pink-500 font-bold" @click="toggleTips">小提示</button>
-    </div>
-    
-    <!-- 小提示弹窗 -->
-    <div class="fixed top-0 left-1/2 w-[90%] max-w-[600px] max-h-[82px] p-[10px] mt-[10px] bg-white text-[#333] rounded-[10px] shadow-[0_4px_8px_#0000001a] z-100 flex flex-col justify-center items-center text-center overflow-hidden transition-all duration-300 ease-in-out"
-         :style="{
-           opacity: showTipsPopup ? 1 : 0,
-           visibility: showTipsPopup ? 'visible' : 'hidden',
-           transform: `translate(-50%) translateY(${showTipsPopup ? '0' : '-20px'})`
-         }"
-    >
-      <div class="flex flex-col text-base items-center justify-center">
-        <span>为避免性能问题，建议不要连续做图</span>
-        <span>建议经常<a href="/" class="text-green-600 hover:text-gray-800 transition-colors">刷新页面</a>优化性能</span>
-        <span class="text-red-500 font-bold">重要提示：请确保您的浏览器和设备性能良好</span>
+  <footer class="max-w-7xl mx-auto w-full py-6 px-3 sm:px-8 text-center relative">
+    <div class="flex flex-col items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+      <div class="flex items-center gap-6">
+        <a
+          href="https://github.com/baiwumm"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center p-1.5 rounded-full transition-colors duration-200 text-gray-400 hover:text-gray-600 hover:bg-gray-200 dark:text-gray-500 dark:hover:text-gray-400 dark:hover:bg-gray-700 box-content"
+        >
+          <Icon icon="ri:github-line" class="w-5 h-5" />
+        </a>
+        <a
+          href="https://baiwumm.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center p-1.5 rounded-full transition-colors duration-200 text-gray-400 hover:text-gray-600 hover:bg-gray-200 dark:text-gray-500 dark:hover:text-gray-400 dark:hover:bg-gray-700 box-content"
+        >
+          <Icon icon="carbon:home" class="w-5 h-5" />
+        </a>
+        <a
+          href="mailto:baiwumm@foxmail.com"
+          class="inline-flex items-center justify-center p-1.5 rounded-full transition-colors duration-200 text-gray-400 hover:text-gray-600 hover:bg-gray-200 dark:text-gray-500 dark:hover:text-gray-400 dark:hover:bg-gray-700 box-content"
+        >
+          <Icon icon="carbon:email" class="w-5 h-5" />
+        </a>
+      </div>
+      <div>
+        <a
+          href="https://beian.miit.gov.cn/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors"
+        >
+          粤ICP备2023007649号
+        </a>
+        |
+        <a
+          href="https://beian.mps.gov.cn/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors"
+        >
+          粤公网安备44030402006402号
+        </a>
+      </div>
+      <div>
+        Copyright © {{ new Date().getFullYear() }}
+        <a
+          href="https://baiwumm.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold hover:text-emerald-500 dark:hover:text-emerald-400 transition-colors"
+        >
+          白雾茫茫丶
+        </a>
       </div>
     </div>
   </footer>
 </template>
 
 <script>
+import { Icon } from "@iconify/vue";
 export default {
-  data() {
-    return {
-      showTipsPopup: false,
-      icpNumber: import.meta.env.VITE_APP_ICP_NUMBER
-    };
+  components: {
+    Icon,
   },
-  methods: {
-    toggleTips() {
-      this.showTipsPopup = !this.showTipsPopup;
-      if (this.showTipsPopup) {
-        setTimeout(() => {
-          this.showTipsPopup = false;
-        }, 3000);
-      }
-    }
-  }
 };
 </script>

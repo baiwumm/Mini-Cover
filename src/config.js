@@ -10,7 +10,7 @@ const fonts = [
 ];
 
 export const defaultConfig = {
-  text: "白雾茫茫丶", // 默认文本
+  text: "谜叶     象限", // 默认文本
   watermark: "@白雾茫茫丶", // 默认水印
   fontFamily: import.meta.env.VITE_APP_FONT_FAMILY,
   fontStyles: fonts.map((f) => f[2]).filter(Boolean),

@@ -5,7 +5,7 @@ const loadedImages = new Map();
 export const state = reactive({
   bgImageUrl: null,
   squareImageUrl: null,
-  bgColor: "#ffffff",
+  bgColor: "#000000",
   textColor: "#ffffff",
   watermarkColor: "#ffffff",
   iconColor: "#ffffff",
